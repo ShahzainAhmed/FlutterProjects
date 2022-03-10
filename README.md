@@ -147,3 +147,74 @@ Output:
 
 ## crossAxisAlignment (left to write)
 
+# Scrollable View
+`body: SingleChildScrollView()`
+```
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+          body: SingleChildScrollView(
+            child: Center(
+                  child: Column(
+            children: [
+              Container(
+                height: 100,
+                width: 100,
+                color: Colors.pink,
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Container(
+                height: 100,
+                width: 100,
+                color: Colors.deepPurple,
+              ),SizedBox(
+                height: 30,),
+              Container(
+                height: 100,
+                width: 100,
+                color: Colors.grey[400],
+              ),SizedBox(
+                height: 30,),
+                Container(
+                height: 100,
+                width: 100,
+                color: Colors.blueGrey,
+              ),SizedBox(
+                height: 30,),
+                Container(
+                height: 100,
+                width: 100,
+                color: Colors.yellow,
+              ),SizedBox(
+                height: 30,),
+                Container(
+                height: 100,
+                width: 100,
+                color: Colors.deepOrange,
+              ),SizedBox(
+                height: 30,),
+             
+            ],
+                  ),
+                ),
+          )),
+    );
+  }
+}
+```
+Output:
+
+![image](https://user-images.githubusercontent.com/59369881/157607669-365c86d1-7412-4ea8-a8b3-7b4328d48217.png)
+
+
