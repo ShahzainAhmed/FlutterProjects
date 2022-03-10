@@ -348,6 +348,9 @@ Output:
 
 ## Margin
 **Spacing outside the container.**
+`margin: EdgeInsets.only(top: 30)`
+
 
 ## Padding
 **Spacing inside the container.**
+`padding: EdgeInsets.only(left: 20, top: 30)`
