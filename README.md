@@ -243,3 +243,46 @@ class MyApp extends StatelessWidget {
 Output:  
 
 ![image](https://user-images.githubusercontent.com/59369881/157613518-60c582a8-0f7c-4fd7-982f-84e25e9802dd.png)
+
+# Text Field
+```
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          appBar: AppBar(
+            title: Center(child: Text("Login Page")),
+          ), body: Column(
+            children: [
+              TextField(),
+            ],
+          ),
+        ));
+  }
+}
+```
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/157703809-ff67c5b1-a2ad-4d67-b778-6ad93f716d14.png)
+
+# Text Field with Simple Decoration of Border
+```
+TextField(
+  decoration: InputDecoration(
+    border: OutlineInputBorder(),
+    hintText: 'Enter a search term',
+  ),
+),
+```
+Output:   
+
+![image](https://user-images.githubusercontent.com/59369881/157706193-3f93edf3-03af-4efa-a9db-4e266357b581.png)
+
