@@ -87,7 +87,8 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/157590534-aa5bedeb-e8f4-4227-b936-2c0ae66e99bc.png)
 
-## Properties of Row
+# Properties of Row
+## mainAxisAlignment (left to write)
 ### center
 ```
 Scaffold(
@@ -138,7 +139,11 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/157591992-b4402028-0b72-41a7-9048-8421f2c03452.png)
 
+## crossAxisAlignment (top to bottom)
+### baseline
 
+# Properties of Column
+## mainAxisAlignment (top to bottom)
 
-
+## crossAxisAlignment (left to write)
 
