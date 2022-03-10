@@ -18,6 +18,7 @@
 - Margin and Padding
 - Align
 - Decoration
+- Linking files together
 
 ## MaterialApp 
 **`(home: )`**
