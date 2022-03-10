@@ -16,6 +16,8 @@
 - StatelessWidget and StatefulWidget Classes
 - EdgeInsets
 - Margin and Padding
+- Align
+- Decoration
 
 ## MaterialApp 
 **`(home: )`**
@@ -357,3 +359,76 @@ Output:
 ## Padding
 **Spacing inside the container.**
 `padding: EdgeInsets.only(left: 20, top: 30)`
+
+## Decoration
+**If you are defining decoration, then must write** `color:Colors.yellow` **inside the decoration box, else it will give an error.**
+```
+decoration: BoxDecoration(
+              color: Colors.yellow,
+              borderRadius: BorderRadius.circular(30),
+          )
+```
+
+## Align
+**It is used to align, e.g. bottomRight, bottomLeft, topRight, topLeft**  
+
+`Align(alignment: Alignment.bottomRight)`
+
+## Align, Margin, Padding, Decoration (all together, 2 files linked - main.dart and home.dart)
+
+### main.dart
+```
+import 'package:firstproject/home.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+// Stateless Class
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Home(),
+      ),
+    );
+  }
+}
+```
+### home.dart
+```
+import 'package:flutter/material.dart';
+
+// Stateful Class
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Align(
+          alignment: Alignment.bottomRight,
+          child: Container(
+            margin: EdgeInsets.only(top: 30),
+            padding: EdgeInsets.only(left: 20, top: 30),
+            child: Center(child: Text("Box Decoration")),
+            width: 200,
+            height: 200,
+            decoration: BoxDecoration(
+              color: Colors.yellow,
+              borderRadius: BorderRadius.circular(30),
+            ),
+          )),
+    );
+  }
+}
+```
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/157735673-108f295a-eb06-4dd8-9ad9-026a63473d7f.png)
