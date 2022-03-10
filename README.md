@@ -127,7 +127,8 @@ Output:
 ![image](https://user-images.githubusercontent.com/59369881/157591396-5ffcd4d7-d0c9-423e-8d9a-097bc241eb2d.png)
 
 ### spaceBetween
-`mainAxisAlignment: MainAxisAlignment.spaceBetween`
+`mainAxisAlignment: MainAxisAlignment.spaceBetween`  
+
 Output:  
 
 ![image](https://user-images.githubusercontent.com/59369881/157591764-1e60df1c-f18d-4fe8-8fbf-fddfc169880d.png)
