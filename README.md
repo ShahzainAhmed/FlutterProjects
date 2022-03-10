@@ -13,6 +13,8 @@
 - Center
 - Textfield
 - ElevatedButton
+- StatelessWidget and StatefulWidget Classes
+- Margin and Padding
 
 ## MaterialApp 
 **`(home: )`**
@@ -343,3 +345,9 @@ Output:
 
 ## StatefulWidget
 **It is a class, where on screen, any changing is being done during runtime.**
+
+## Margin
+**Spacing outside the container.**
+
+## Padding
+**Spacing inside the container.**
