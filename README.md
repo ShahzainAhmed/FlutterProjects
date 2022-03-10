@@ -286,3 +286,54 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/157706193-3f93edf3-03af-4efa-a9db-4e266357b581.png)
 
+# Form with Elevated Button
+```
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          appBar: AppBar(
+            title: Center(child: Text("Shahzain's Login Page")),
+          ),
+          body: Center(
+            child: Column(
+              // mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                SizedBox(
+                  height: 30,
+                ),
+                Container(
+                  width: 200,
+                  child: TextField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(), hintText: "First name"),
+                  ),
+                ),
+                SizedBox(height: 20),
+                Container(
+                  width: 200,
+                  child: TextField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(), hintText: "Last name"),
+                  ),
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(onPressed: () {}, child: Text("Click to Login"))
+              ],
+            ),
+          ),
+        ));
+  }
+}
+```
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/157722147-b4a20217-c860-46c2-87c0-c69321fc7bd5.png)
