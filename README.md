@@ -87,3 +87,58 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/157590534-aa5bedeb-e8f4-4227-b936-2c0ae66e99bc.png)
 
+## Properties of Row
+### center
+```
+Scaffold(
+            body: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+            children: const [Text("1st Row"), 
+           Text("2nd Row"),
+           Text("3rd Row"),]
+            
+            
+          ),)
+```
+Output:
+
+![image](https://user-images.githubusercontent.com/59369881/157591149-0daa65bf-da72-4825-95fa-f38a5e43d071.png)
+
+### start
+`mainAxisAlignment: MainAxisAlignment.start`
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/157592087-33b9c797-1461-4b53-b958-d115ce9a0b96.png)
+
+### end
+`mainAxisAlignment: MainAxisAlignment.end`
+
+Output:
+
+![image](https://user-images.githubusercontent.com/59369881/157591267-affc6920-3312-46e8-9f37-80fc325413dd.png)
+
+### spaceAround
+`mainAxisAlignment: MainAxisAlignment.spaceAround`
+
+Output:
+
+![image](https://user-images.githubusercontent.com/59369881/157591396-5ffcd4d7-d0c9-423e-8d9a-097bc241eb2d.png)
+
+### spaceBetween
+`mainAxisAlignment: MainAxisAlignment.spaceBetween`
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/157591764-1e60df1c-f18d-4fe8-8fbf-fddfc169880d.png)
+
+### spaceEvenly
+`mainAxisAlignment: MainAxisAlignment.spaceEvenly`
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/157591992-b4402028-0b72-41a7-9048-8421f2c03452.png)
+
+
+
+
+
