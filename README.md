@@ -14,6 +14,7 @@
 - Textfield
 - ElevatedButton
 - StatelessWidget and StatefulWidget Classes
+- EdgeInsets
 - Margin and Padding
 
 ## MaterialApp 
@@ -346,10 +347,12 @@ Output:
 ## StatefulWidget
 **It is a class, where on screen, any changing is being done during runtime.**
 
+## EdgeInsets
+**It is a class, which tells us the edges of any box/container (i.e. left edge, right edge, bottom edge, top edge)**
+
 ## Margin
 **Spacing outside the container.**
 `margin: EdgeInsets.only(top: 30)`
-
 
 ## Padding
 **Spacing inside the container.**
