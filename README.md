@@ -87,8 +87,8 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/157590534-aa5bedeb-e8f4-4227-b936-2c0ae66e99bc.png)
 
-# Properties of Row
-## mainAxisAlignment (left to write)
+## Properties of Row
+### mainAxisAlignment (left to write)
 ### center
 ```
 Scaffold(
@@ -143,12 +143,12 @@ Output:
 ## crossAxisAlignment (top to bottom)
 ### baseline
 
-# Properties of Column
-## mainAxisAlignment (top to bottom)
+## Properties of Column
+### mainAxisAlignment (top to bottom)
 
-## crossAxisAlignment (left to write)
+### crossAxisAlignment (left to write)
 
-# Scrollable View
+## Scrollable View
 `body: SingleChildScrollView()`
 ```
 import 'package:flutter/material.dart';
@@ -218,7 +218,7 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/157607669-365c86d1-7412-4ea8-a8b3-7b4328d48217.png)
 
-# AppBar()
+## AppBar()
 ```
 import 'package:flutter/material.dart';
 
@@ -244,7 +244,7 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/157613518-60c582a8-0f7c-4fd7-982f-84e25e9802dd.png)
 
-# Text Field
+## Text Field
 ```
 import 'package:flutter/material.dart';
 
@@ -273,7 +273,7 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/157703809-ff67c5b1-a2ad-4d67-b778-6ad93f716d14.png)
 
-# Text Field with Simple Decoration of Border
+## Text Field with Simple Decoration of Border
 ```
 TextField(
   decoration: InputDecoration(
@@ -286,7 +286,7 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/157706193-3f93edf3-03af-4efa-a9db-4e266357b581.png)
 
-# Form with Elevated Button
+## Form with Elevated Button
 ```
 import 'package:flutter/material.dart';
 
