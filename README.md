@@ -2,12 +2,23 @@
 ## Started on 10th March 2022
 # Topics Covered
 **Basic Widgets for User Interface in Flutter**
-1) Container
-2) SizedBox
-3) Column
-4) Row
-5) SingleChildScrollView
-6) AppBar
-7) Center
-8) Textfield
-9) ElevatedButton
+- MaterialApp
+- Scaffold
+- Container
+- SizedBox
+- Column
+- Row
+- SingleChildScrollView
+- AppBar
+- Center
+- Textfield
+- ElevatedButton
+
+## MaterialApp 
+**`(home: )`**
+## Scaffold
+**`(body: )` this means it takes the entire body**
+## Container
+**Container will take only 1 child.  `(child: )` meaning 1 widget only. (e.g. text button, container, etc)**
+## Row/Column
+**``children:`` meaning it takes more than 1 widget (e.g. text button, container, etc)**
