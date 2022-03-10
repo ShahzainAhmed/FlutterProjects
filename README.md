@@ -286,7 +286,7 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/157706193-3f93edf3-03af-4efa-a9db-4e266357b581.png)
 
-## Form with Elevated Button
+## Login Page with Elevated Button
 ```
 import 'package:flutter/material.dart';
 
@@ -337,3 +337,9 @@ class MyApp extends StatelessWidget {
 Output:  
 
 ![image](https://user-images.githubusercontent.com/59369881/157722147-b4a20217-c860-46c2-87c0-c69321fc7bd5.png)
+
+## StatelessWidget
+**It is a class, where on screen, no changing is being done and no action is being performed. It remains static during runtime.** 
+
+## StatefulWidget
+**It is a class, where on screen, any changing is being done during runtime.**
