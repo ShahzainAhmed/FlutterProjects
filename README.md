@@ -20,11 +20,11 @@
 - Decoration
 - Linking files together
 - Gradient
-- CircleAvatar()
-- Images in CircleAvatar()
-- - NetworkImage() and AssetImage()
-- Stack()
-- Posiitoned()
+- CircleAvatar
+- Images in CircleAvatar
+- - NetworkImage and AssetImage
+- Stack
+- Posiitoned
 - MediaQuery
 
 ## MaterialApp 
@@ -681,7 +681,9 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/157866976-22bd31f1-4b01-4f4a-b42a-7bed44c9d165.png)
 
-## MediaQuery
+## MediaQuery()
+**It is used for making the layout responsive, because every device has a different layout, if we use height and widths directly, it will not be responsive.**
+
 ### For Height : 
 `MediaQuery.of(context).size.height`  
 **by default height of MediaQuery is set to 100%**  
@@ -691,3 +693,75 @@ Output:
 `MediaQuery.of(context).size.width`  
 **by default width of MediaQuery is set to 100%**  
 **To make it 50%, multiply height with 0.5, just like: `MediaQuery.of(context).size.width*0.5`**
+
+```
+return Scaffold(
+      body: Container(
+        color: Colors.pink,
+        height: MediaQuery.of(context).size.height*0.5,
+        width: MediaQuery.of(context).size.width*0.5,
+      )
+    );
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/157873377-a647b784-7073-4c73-a661-a474d596c4bc.png)
+
+## Navigator
+### home.dart
+```
+import 'package:firstproject/app.dart';
+import 'package:flutter/material.dart';
+
+// Stateful Class
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Center(
+      child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => App()));
+            },
+          child: Text("Button"))
+    ));
+  }
+}
+```
+
+### app.dart
+```
+import 'package:flutter/material.dart';
+
+class App extends StatefulWidget {
+  const App({ Key? key }) : super(key: key);
+
+  @override
+  State<App> createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Scaffold(
+        body: Text("App Page", style: TextStyle(fontSize: 30),)
+        
+      ),
+    );
+  }
+}
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/157877897-c316ebb9-113a-406a-84d9-8d708b4bafe9.png)
+
+![image](https://user-images.githubusercontent.com/59369881/157877997-704cab65-30b7-4e07-b3c3-a18461206888.png)
+
