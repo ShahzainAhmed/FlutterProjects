@@ -24,7 +24,7 @@
 - Images in CircleAvatar
 - - NetworkImage and AssetImage
 - Stack
-- Posiitoned
+- Positioned
 - MediaQuery
 - Navigator
 - ListTile
