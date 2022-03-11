@@ -20,7 +20,9 @@
 - Decoration
 - Linking files together
 - Gradient
-- 
+- CircleAvatar()
+- Images in CircleAvatar()
+- - NetworkImage() and AssetImage()
 
 ## MaterialApp 
 **`(home: )`**
@@ -524,5 +526,20 @@ Output:
 
 
 ### 2) AssetImage(): First download the image, then put it in your Flutter Project's folder, then use it.
+```
+ return Scaffold(
+        body: Center(
+      child: CircleAvatar(
+        radius: 200,
+        backgroundImage: AssetImage("assets/flutter.jpg"),
+      ),
+    ));
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/157862002-1f5df50d-3164-4e74-a9e3-874176c2afe7.png)
+
+
 
 
