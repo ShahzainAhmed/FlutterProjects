@@ -878,6 +878,7 @@ Widget myWidget() {
         CircleAvatar(
           backgroundColor: Colors.green,
           radius: 10,
+          child: Text("86"), // to write the number of messages inside the green bubble 
         ),
       ],
     ),
@@ -887,6 +888,8 @@ Widget myWidget() {
 
 Output:  
 
-![image](https://user-images.githubusercontent.com/59369881/157890349-b52aae83-99dd-4c8d-976e-0736560ff42c.png)
+![image](https://user-images.githubusercontent.com/59369881/157890885-344f32eb-f906-4fd6-8246-0a8ee5207c0e.png)
+
+
 
 
