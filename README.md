@@ -19,6 +19,8 @@
 - Align
 - Decoration
 - Linking files together
+- Gradient
+- 
 
 ## MaterialApp 
 **`(home: )`**
@@ -433,3 +435,16 @@ class _HomeState extends State<Home> {
 Output:  
 
 ![image](https://user-images.githubusercontent.com/59369881/157735673-108f295a-eb06-4dd8-9ad9-026a63473d7f.png)
+
+## Gradient
+
+```
+ decoration: BoxDecoration(
+              gradient: LinearGradient(colors: [
+              Colors.yellow, Colors.red,
+          ]),
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/157809167-fe851733-ed52-4dd0-a109-5869017dc486.png)
