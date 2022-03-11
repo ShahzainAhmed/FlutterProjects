@@ -26,6 +26,10 @@
 - Stack
 - Posiitoned
 - MediaQuery
+- Navigator
+- ListTile
+- - leading
+- - trailing
 
 ## MaterialApp 
 **`(home: )`**
@@ -771,5 +775,64 @@ Output:
 ![image](https://user-images.githubusercontent.com/59369881/157877897-c316ebb9-113a-406a-84d9-8d708b4bafe9.png)
 
 ![image](https://user-images.githubusercontent.com/59369881/157879660-e5024131-c03f-4dbb-93b3-e0861c34f920.png)
+
+## ListTile()
+
+### leading
+**A widget to be displayed before the title**
+
+### trailing
+**A widget to be displayed after the title**
+
+```
+// import 'package:firstproject/app.dart';
+import 'package:flutter/material.dart';
+
+// Stateful Class
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.white,
+        body: Column(
+          children: [
+            ListTile(
+              leading: CircleAvatar(
+                backgroundImage: AssetImage("assets/shahzain.jpg"),
+                radius: 20,
+              ),
+              title: Text(
+                "Shahzain Ahmed",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text("shahzainahmed57@gmail.com"),
+              trailing: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text("4.25 PM"),
+                  CircleAvatar(
+                    backgroundColor: Colors.green,
+                    radius: 10,
+                  ),
+                ],
+              ),
+            )
+          ],
+        ));
+  }
+}
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/157888540-96a821df-8836-486b-8f36-078a14bdf991.png)
+
+
+
 
 
