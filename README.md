@@ -23,6 +23,7 @@
 - CircleAvatar()
 - Images in CircleAvatar()
 - - NetworkImage() and AssetImage()
+- Stack()
 
 ## MaterialApp 
 **`(home: )`**
@@ -540,6 +541,74 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/157862002-1f5df50d-3164-4e74-a9e3-874176c2afe7.png)
 
+## Stack()
+**It is a widget, which is children, meaning it can take many containers or other things at once.**
+
+```
+import 'package:flutter/material.dart';
+
+// Stateful Class
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          Align(
+              alignment: Alignment.bottomLeft,
+              child: Container(
+                color: Colors.teal,
+                height: 100,
+                width: 100,
+              )),
+          Positioned(
+            left: 20,
+            top: 20,
+            child: Container(
+              color: Colors.black,
+              height: 100,
+              width: 100,
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: Container(
+              color: Colors.blue,
+              height: 100,
+              width: 100,
+            ),
+          ),
+          Align(
+            alignment: Alignment.topLeft,
+            child: Container(
+              color: Colors.purple,
+              height: 100,
+              width: 100,
+            ),
+          ),
+          Align(
+            alignment: Alignment.topRight,
+            child: Container(
+              color: Colors.yellow,
+              height: 100,
+              width: 100,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/157864694-b4db7082-5d09-4609-af37-c4ab1b9ea454.png)
 
 
 
