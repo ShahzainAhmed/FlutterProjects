@@ -24,6 +24,7 @@
 - Images in CircleAvatar()
 - - NetworkImage() and AssetImage()
 - Stack()
+- Posiitoned()
 
 ## MaterialApp 
 **`(home: )`**
@@ -610,5 +611,71 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/157864694-b4db7082-5d09-4609-af37-c4ab1b9ea454.png)
 
+## Positioned()
+**It is a widget, which is used to change the positions from top, bottom, left, and right.**
 
+```
+import 'package:flutter/material.dart';
 
+// Stateful Class
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          Align(
+              alignment: Alignment.topLeft,
+              child: Container(
+                color: Colors.teal,
+                height: 100,
+                width: 100,
+              )),
+          Positioned(
+            left: 50,
+            top: 50,
+            child: Container(
+              color: Colors.red,
+              height: 100,
+              width: 100,
+            ),
+          ),
+          Align(
+            alignment: Alignment.topRight,
+            child: Container(
+              color: Colors.blue,
+              height: 100,
+              width: 100,
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: Container(
+              color: Colors.purple,
+              height: 100,
+              width: 100,
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: Container(
+              color: Colors.yellow,
+              height: 100,
+              width: 100,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/157866976-22bd31f1-4b01-4f4a-b42a-7bed44c9d165.png)
