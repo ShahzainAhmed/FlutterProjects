@@ -25,6 +25,7 @@
 - - NetworkImage() and AssetImage()
 - Stack()
 - Posiitoned()
+- MediaQuery
 
 ## MaterialApp 
 **`(home: )`**
@@ -679,3 +680,12 @@ class _HomeState extends State<Home> {
 Output:  
 
 ![image](https://user-images.githubusercontent.com/59369881/157866976-22bd31f1-4b01-4f4a-b42a-7bed44c9d165.png)
+
+## MediaQuery
+### For Height (by default = 100) :
+`MediaQuery.of(context).size.height`
+**To make it 50%, multiply height with 0.5, just like: `MediaQuery.of(context).size.height*0.5`
+
+### For Width (by default = 100) :
+`MediaQuery.of(context).size.width`
+**To make it 50%, multiply height with 0.5, just like: `MediaQuery.of(context).size.width*0.5`
