@@ -437,7 +437,7 @@ Output:
 ![image](https://user-images.githubusercontent.com/59369881/157735673-108f295a-eb06-4dd8-9ad9-026a63473d7f.png)
 
 ## Gradient
-
+### LinearGradient
 ```
  decoration: BoxDecoration(
               gradient: LinearGradient(colors: [
@@ -448,3 +448,61 @@ Output:
 Output:  
 
 ![image](https://user-images.githubusercontent.com/59369881/157809167-fe851733-ed52-4dd0-a109-5869017dc486.png)
+
+### RadialGradient
+
+```
+ decoration: BoxDecoration(
+              gradient: RadialGradient(colors: [
+              Colors.yellow, Colors.red,
+          ]),
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/157809735-0e5512b3-d7cf-488f-a27c-08155b45e142.png)
+
+## Text Styling
+### home.dart
+```
+import 'package:flutter/material.dart';
+
+// Stateful Class
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text("Hello Flutter", style: TextStyle(color: Colors.blue, fontSize: 30, fontWeight: FontWeight.bold))
+    ));
+  }
+}
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/157855757-216a9c0e-34bf-435c-9d32-fef9a0c1f94d.png)
+
+## CircleAvatar()
+**It gives us radius (size) and gives a rounded form to (a corner or edge).**
+
+```
+return Scaffold(
+     body: CircleAvatar(
+       radius: 100,
+       backgroundColor: Colors.blue,
+     ),
+      );
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/157857991-c3748f5b-35e5-472b-886c-57e96ad055bc.png)
+
+
+
