@@ -30,6 +30,7 @@
 - ListTile
 - - leading
 - - trailing
+- Widget
 
 ## MaterialApp 
 **`(home: )`**
@@ -830,9 +831,62 @@ class _HomeState extends State<Home> {
 
 Output:  
 
-![image](https://user-images.githubusercontent.com/59369881/157888540-96a821df-8836-486b-8f36-078a14bdf991.png)
+![image](https://user-images.githubusercontent.com/59369881/157889203-63f5def8-47a4-413d-bf41-a7b17eb58a0b.png)
 
+## Widget
+**To create a widget, go completely out of the class, and then write** `widget widgetName(){}` 
 
+```
+import 'package:flutter/material.dart';
 
+// Stateful Class
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.white,
+        body: Column(
+          children: [
+            myWidget(), // calling our own custom widget
+            myWidget(), // calling our own custom widget
+            myWidget(), // calling our own custom widget
+          ],
+        ));
+  }
+}
+
+Widget myWidget() {
+  return ListTile(
+    leading: CircleAvatar(
+      backgroundImage: AssetImage("assets/shahzain.jpg"),
+      radius: 20,
+    ),
+    title: Text(
+      "Shahzain Ahmed",
+      style: TextStyle(fontWeight: FontWeight.bold),
+    ),
+    subtitle: Text("shahzainahmed57@gmail.com"),
+    trailing: Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Text("4.25 PM"),
+        CircleAvatar(
+          backgroundColor: Colors.green,
+          radius: 10,
+        ),
+      ],
+    ),
+  );
+}
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/157890349-b52aae83-99dd-4c8d-976e-0736560ff42c.png)
 
 
