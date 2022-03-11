@@ -504,5 +504,25 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/157857991-c3748f5b-35e5-472b-886c-57e96ad055bc.png)
 
+## Images in CircleAvatar()
+### 1) NetworkImage(): Provide URL/Link in this to make the image appear.
+
+```
+return Scaffold(
+        body: Center(
+      child: CircleAvatar(
+        radius: 200,
+        backgroundImage: NetworkImage(
+            "https://logowik.com/content/uploads/images/flutter5786.jpg"),
+      ),
+    ));
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/157860223-6c079df5-1823-47ac-b1f6-397bf014c44f.png)
+
+
+### 2) AssetImage(): First download the image, then put it in your Flutter Project's folder, then use it.
 
 
