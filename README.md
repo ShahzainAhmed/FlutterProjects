@@ -751,7 +751,14 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return Center(
       child: Scaffold(
-        body: Text("App Page", style: TextStyle(fontSize: 30),)
+        body: Column(
+          children: [
+            Text("App Page", style: TextStyle(fontSize: 30),),
+            ElevatedButton(onPressed: (){
+              Navigator.pop(context);
+            }, child: Text("Back"))
+          ],
+        )
         
       ),
     );
@@ -763,5 +770,6 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/157877897-c316ebb9-113a-406a-84d9-8d708b4bafe9.png)
 
-![image](https://user-images.githubusercontent.com/59369881/157877997-704cab65-30b7-4e07-b3c3-a18461206888.png)
+![image](https://user-images.githubusercontent.com/59369881/157879660-e5024131-c03f-4dbb-93b3-e0861c34f920.png)
+
 
