@@ -31,6 +31,7 @@
 - - leading
 - - trailing
 - Widget
+- ListView
 
 ## MaterialApp 
 **`(home: )`**
@@ -889,6 +890,67 @@ Widget myWidget() {
 Output:  
 
 ![image](https://user-images.githubusercontent.com/59369881/157890885-344f32eb-f906-4fd6-8246-0a8ee5207c0e.png)
+
+## ListView
+
+```
+import 'package:flutter/material.dart';
+
+// Stateful Class
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: ListView(
+      children: [
+        Container(
+          color: Colors.amber,
+          height: 100,
+          child: Row(
+            children: [
+              Container(
+                color: Colors.teal,
+                height: 95,
+                width: 90,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Shahzain Ahmed"),
+                    Row(
+                      children: [
+                        Text("Shahzain Ahmed"),
+                        Text("Shahzain Ahmed"),
+                      ],
+                      
+                    ),
+                    Icon(Icons.notifications),
+                    Icon(Icons.call),
+                    Text("Shahzain Ahmed"),
+                    
+                  ],
+                ),
+              )
+            ],
+          ),
+          
+        )
+      ],
+    ));
+  }
+}
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/157999857-0d76ec7d-d768-4061-8c4d-d36447e5ee1a.png)
 
 
 
