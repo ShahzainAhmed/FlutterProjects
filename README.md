@@ -1224,6 +1224,56 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/158014706-f75769ff-97e1-4fac-8600-a9fb545551e6.png)
 
+### Drawer (with images)
+
+```
+ DrawerHeader(                   // adjusts height and width itself
+                child: Container(
+              // color: Colors.amber,
+              child: Image.network("https://wallpaperaccess.com/full/3792708.jpg"),
+            )),
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/158026004-54197851-07e2-4173-ab8f-60ea0fe20c8c.png)
+
+## DefaultTabController()
+
+```
+import 'package:flutter/material.dart';
+
+// Stateful Class
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: TabBar(tabs: [
+            Tab(
+              child: Text("Login"),
+            ),
+            Tab(
+              child: Text("Register"),
+            ),
+          ]),
+        ),
+      ),
+    );
+  }
+}
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/158027168-8c8002fb-055d-40f0-ac5c-66f05609a569.png)
 
 
 
