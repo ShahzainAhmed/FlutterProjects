@@ -32,6 +32,7 @@
 - - trailing
 - Widget
 - ListView
+- - ListView.builder
 
 ## MaterialApp 
 **`(home: )`**
@@ -1008,6 +1009,39 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/157999857-0d76ec7d-d768-4061-8c4d-d36447e5ee1a.png)
 
+## ListView.builder()
 
+```
+import 'package:flutter/material.dart';
+
+// Stateful Class
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  var lst = ["Shahzain Ahmed", "Murtaza Bozdar", "Raza Rehman"];
+  var age = ["86", "30", "120"];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: ListView.builder(
+      itemCount: lst.length,
+      itemBuilder: (context, index) {
+        return ListTile(
+          title: Text(lst[index]),
+          subtitle: Text(age[index]),
+        );
+      },
+    ));
+  }
+}
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/158001365-7ad51e1d-82a4-430e-a96f-8fcbb8ed446b.png)
 
 
