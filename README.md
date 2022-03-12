@@ -37,6 +37,7 @@
 - - ListView.builder
 - GridView
 - Drawer
+- DefaultTabController
 
 ## Child vs Children
 **Child means one widget, children means more than one widget.**
