@@ -1044,4 +1044,59 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/158001365-7ad51e1d-82a4-430e-a96f-8fcbb8ed446b.png)
 
+## ListView.builder (with images)
+
+```
+import 'package:flutter/material.dart';
+
+// Stateful Class
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+
+  var lst = [
+    "https://www.pngitem.com/pimgs/m/616-6164295_programming-language-logos-png-transparent-png.png",
+    "https://miro.medium.com/max/800/1*wcEYa9AjnMZxXAau2iuhYw.png",
+    "https://cdn.iconscout.com/icon-pack/preview-mockup/programming-language-logos-24701.png"
+  ];
+
+  var age = ["86", "30", "120"];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: ListView.builder(
+      itemCount: lst
+          .length, // can write age.length also, only if the list is of same quantity
+      itemBuilder: (context, index) {
+        return Container(
+          height: 200,
+          width: 200,
+          child: Image.network(lst[index]),
+        );
+      },
+    ));
+  }
+}
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/158001950-0ddf8958-c561-45ce-bdaf-fe68b22ff042.png)
+
+### Flutter Tooling Supports 3 Build Modes:
+
+- **Debug** 
+- **Release**
+- **Profile**.
+
+**Debug mode is used to debug the application on the physical device, emulator, or simulator. Here, assertions, service extensions are enabled. Then compilation is optimized for fast deployment.**
+
+**Release mode is enabled to deploy your app. Here, assertions, service extension and debugging are disabled. Finally, the compilation is optimized for fast startup, execution, and package sizes.**
+
+**Profile mode is used to analyze the performance of your app. Here, some extensions and tracing are enabled.**
+
 
