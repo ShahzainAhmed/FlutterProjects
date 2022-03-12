@@ -33,6 +33,19 @@
 - Widget
 - ListView
 - - ListView.builder
+- GridView
+
+## Flutter Tooling Supports 3 Build Modes:
+
+- **Debug** 
+- **Release**
+- **Profile**.
+
+**Debug mode is used to debug the application on the physical device, emulator, or simulator. Here, assertions, service extensions are enabled. Then compilation is optimized for fast deployment.**
+
+**Release mode is enabled to deploy your app. Here, assertions, service extension and debugging are disabled. Finally, the compilation is optimized for fast startup, execution, and package sizes.**
+
+**Profile mode is used to analyze the performance of your app. Here, some extensions and tracing are enabled.**
 
 ## MaterialApp 
 **`(home: )`**
@@ -950,6 +963,8 @@ Output:
 
 ## ListView()
 
+**One widget per line (horizontally), goes top to bottom, it will only take one item of 100% width at one time, then the next item below that, then third below that etc.**
+
 ```
 import 'package:flutter/material.dart';
 
@@ -1087,16 +1102,16 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/158010262-b87a50f1-aa9e-4b10-aef1-fa076065004f.png)
 
-### Flutter Tooling Supports 3 Build Modes:
+## GridView()
 
-- **Debug** 
-- **Release**
-- **Profile**.
+**We can give 2 or 3 widgets in one single line horizontally, it depends how many widgets do we want to give.**  
 
-**Debug mode is used to debug the application on the physical device, emulator, or simulator. Here, assertions, service extensions are enabled. Then compilation is optimized for fast deployment.**
 
-**Release mode is enabled to deploy your app. Here, assertions, service extension and debugging are disabled. Finally, the compilation is optimized for fast startup, execution, and package sizes.**
 
-**Profile mode is used to analyze the performance of your app. Here, some extensions and tracing are enabled.**
+## ListView() vs GridView()
+
+**The main difference between ListView and GridView is how it lays out its child. With ListView you are laying your children one by one either vertically or horizontally only. With GridView, its a combination of both. It lays its children horizontally first**  
+
+![image](https://user-images.githubusercontent.com/59369881/158013082-69f264a6-910f-4b08-8b20-7e8b15307d5e.png)
 
 
