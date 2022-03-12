@@ -2,6 +2,8 @@
 ## Started on 10th March 2022
 # Topics Covered
 **Basic Widgets for User Interface in Flutter**
+- Child vs Children
+- Flutter Tooling Build Modes
 - MaterialApp
 - Scaffold
 - Container
@@ -34,8 +36,12 @@
 - ListView
 - - ListView.builder
 - GridView
+- Drawer
 
-## Flutter Tooling Supports 3 Build Modes:
+## Child vs Children
+**Child means one widget, children means more than one widget.**
+
+## Flutter Tooling Supports 3 Build Modes
 
 - **Debug** 
 - **Release**
@@ -1156,5 +1162,68 @@ Output:
 **The main difference between ListView and GridView is how it lays out its child. With ListView you are laying your children one by one either vertically or horizontally only. With GridView, its a combination of both. It lays its children horizontally first**  
 
 ![image](https://user-images.githubusercontent.com/59369881/158013082-69f264a6-910f-4b08-8b20-7e8b15307d5e.png)
+
+## Drawer 
+
+**It takes child (one widget)**
+
+```
+import 'package:flutter/material.dart';
+
+// Stateful Class
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  var lst = [
+    "Shahzain Ahmed",
+    "Flutter",
+    "Mobile App Developer",
+    "Computer Systems"
+  ];
+
+  var age = ["86", "30", "120"];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Drawer by Shahzain Ahmed"),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(                   // adjusts height and width itself
+                child: Container(
+              color: Colors.amber,
+              child: Text("HEADER"),
+            )),
+            ListTile(
+              title: Text("Flutter"),
+            ),
+            ListTile(
+              title: Text("App"),
+            ),
+            ListTile(
+              title: Text("Developer"),
+            )
+            
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/158014691-f214df38-80e1-4294-b466-7ccb286e4fc2.png)
+
+![image](https://user-images.githubusercontent.com/59369881/158014706-f75769ff-97e1-4fac-8600-a9fb545551e6.png)
+
+
 
 
