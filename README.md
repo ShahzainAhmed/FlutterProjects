@@ -1118,9 +1118,9 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   var lst = [
     "Shahzain Ahmed",
-    "18CS86",
+    "Flutter",
     "Mobile App Developer",
-    "Computer Systems Engineer"
+    "Computer Systems"
   ];
 
   var age = ["86", "30", "120"];
@@ -1149,7 +1149,7 @@ class _HomeState extends State<Home> {
 
 Output:  
 
-![image](https://user-images.githubusercontent.com/59369881/158014043-be944229-83ad-46c8-88aa-3e9a6511cb5f.png)
+![image](https://user-images.githubusercontent.com/59369881/158014182-e352e398-30f4-4913-86d9-9b0f817d33a3.png)
 
 ## ListView() vs GridView()
 
