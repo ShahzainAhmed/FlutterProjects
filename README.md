@@ -1106,7 +1106,50 @@ Output:
 
 **We can give 2 or 3 widgets in one single line horizontally, it depends how many widgets do we want to give.**  
 
+```
+import 'package:flutter/material.dart';
 
+// Stateful Class
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  var lst = [
+    "Shahzain Ahmed",
+    "18CS86",
+    "Mobile App Developer",
+    "Computer Systems Engineer"
+  ];
+
+  var age = ["86", "30", "120"];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: GridView.count(
+      crossAxisCount: 2, // in one line, taking 2 widgets only
+      crossAxisSpacing: 10, // left to right spacing (x-axis)
+      mainAxisSpacing: 10, // top to bottom spacing (y-axis)
+
+      children: List.generate(lst.length, (index) {
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            color: Colors.blue,
+            child: Center(child: Text(lst[index])),
+          ),
+        );
+      }),
+    ));
+  }
+}
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/158014043-be944229-83ad-46c8-88aa-3e9a6511cb5f.png)
 
 ## ListView() vs GridView()
 
