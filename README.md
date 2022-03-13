@@ -39,6 +39,7 @@
 - Drawer
 - DefaultTabController
 - TabBar
+- setState
 
 ## Child vs Children
 **Child means one widget, children means more than one widget.**
@@ -1389,7 +1390,7 @@ Output:
 
 ## setState()
 
-**Everthing which includes logic, e.g. Calculator, will be done using setState().**
+**Whenever we want any changing when the action is performed for example on a button, then we use setState(). Everthing which includes logic, e.g. Calculator, will be done using setState().**
 
 ### home.dart
 
@@ -1448,6 +1449,64 @@ Output:
 ![image](https://user-images.githubusercontent.com/59369881/158042085-8f6d0c94-f2a4-46c1-9d36-18ad4856895a.png)  
 
 
+## Counter Application using setState()
+
+```
+import 'package:flutter/material.dart';
+
+// Stateful Class
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  var text = 1;
+
+  one() {
+    setState(() {
+      text += 1; // text = text + 1;
+    });
+  }
+
+  two() {
+    setState(() {
+      text = 0;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Shahzain Ahmed's", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+            SizedBox(height: 20,),
+            Text("Counter Application", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+            SizedBox(height: 20,),
+            Text("$text" , style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),),
+            SizedBox(
+              height: 20,
+            ),
+             ElevatedButton(onPressed: one, child: Text("Add +1", style: TextStyle(fontSize: 20),)),
+              SizedBox(
+              height: 20,
+            ),
+             ElevatedButton(onPressed: two, child: Text("Clear", style: TextStyle(fontSize: 20),)),
+            
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/158042628-2aa78daa-7bb6-4333-bdcf-6d22a5fbfecd.png)
 
 
 
