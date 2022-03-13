@@ -38,6 +38,7 @@
 - GridView
 - Drawer
 - DefaultTabController
+- TabBar
 
 ## Child vs Children
 **Child means one widget, children means more than one widget.**
@@ -1276,5 +1277,113 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/158027168-8c8002fb-055d-40f0-ac5c-66f05609a569.png)
 
+## TabBar
+**It comes in AppBar, and takes tabs:[]**
 
+### home.dart
+
+```
+// import 'package:firstproject/app.dart';
+import 'package:firstproject/login.dart';
+import 'package:firstproject/register.dart';
+import 'package:flutter/material.dart';
+
+// Stateful Class
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 2, // 1) login (2) register
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Good Morning, Shahzain Ahmed!"),
+          bottom: TabBar(
+              unselectedLabelColor: Colors.black,
+              labelColor: Colors.white,
+              indicatorColor: Colors.amber,
+              tabs: [
+                Tab(
+                  child: Text(
+                    "Login",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Tab(
+                  child: Text(
+                    "Register",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ]),
+        ),
+        body: TabBarView(children: [
+          Login(),
+          Register(),
+        ]),
+      ),
+    );
+  }
+}
+```
+
+### register.dart
+
+```
+// import 'package:firstproject/app.dart';
+import 'package:flutter/material.dart';
+
+// Stateful Class
+class Register extends StatefulWidget {
+  @override
+  State<Register> createState() => _RegisterState();
+}
+
+class _RegisterState extends State<Register> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Center(
+          child: Text(
+        "Register",
+        style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),
+      )),
+    );
+  }
+}
+```
+
+### login.dart
+
+```
+import 'package:flutter/material.dart';
+
+class Login extends StatefulWidget {
+  @override
+  State<Login> createState() => LoginState();
+}
+
+class LoginState extends State<Login> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Center(
+          child: Text(
+        "Login",
+        style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),
+      )),
+    );
+  }
+}
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/158041507-9f1013ab-719d-4fdf-adc7-e2924d09809b.png)  
+
+![image](https://user-images.githubusercontent.com/59369881/158041515-2d73aaec-b30e-4662-8d2f-da30b937d198.png)
 
