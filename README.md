@@ -40,6 +40,7 @@
 - DefaultTabController
 - TabBar
 - setState
+- Counter Application (using setState)
 
 ## Child vs Children
 **Child means one widget, children means more than one widget.**
@@ -1507,6 +1508,124 @@ class _HomeState extends State<Home> {
 Output:  
 
 ![image](https://user-images.githubusercontent.com/59369881/158042730-9023b933-9a2c-4849-ac11-ca289b1a6bea.png)
+
+## List dynamic
+
+ **This means it can have Strings as well as integers.** 
+
+## ListView() + GridView() (scrollable)
+```
+import 'package:flutter/material.dart';
+
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  List<dynamic> lst = [1, 2, 3, 4, 5, 6, 7, 8];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          // in column we don't define length, we can take multiple items in column
+          children: [
+            Container(
+              child: Column(
+                children: [
+                  Container(
+                    height: 200,
+                    width: 200,
+                    color: Colors.amber,
+                    margin: EdgeInsets.only(top: 10),
+                  ),
+                  Container(
+                    height: 200,
+                    width: 200,
+                    color: Colors.blue,
+                    margin: EdgeInsets.only(top: 10),
+                  ),
+                  Container(
+                    height: 200,
+                    width: 200,
+                    color: Colors.red,
+                    margin: EdgeInsets.only(top: 10),
+                  ),
+                  Container(
+                    height: 200,
+                    width: 200,
+                    color: Colors.green,
+                    margin: EdgeInsets.only(top: 10),
+                  ),
+                  Container(
+                    height: 200,
+                    width: 200,
+                    color: Colors.amber,
+                    margin: EdgeInsets.only(top: 10),
+                  ),
+                  Container(
+                    height: 200,
+                    width: 200,
+                    color: Colors.purple,
+                    margin: EdgeInsets.only(top: 10),
+                  ),
+                  Container(
+                    height: 200,
+                    width: 200,
+                    color: Colors.pink,
+                    margin: EdgeInsets.only(top: 10),
+                  ),
+                  Container(
+                    height: 200,
+                    width: 200,
+                    color: Colors.teal,
+                    margin: EdgeInsets.only(top: 10),
+                  ),
+                  Container(
+                    height: 200,
+                    width: 200,
+                    color: Colors.cyan,
+                    margin: EdgeInsets.only(top: 10),
+                  ),
+                  Container(
+                    height: 200,
+                    width: 200,
+                    color: Colors.lightBlue,
+                    margin: EdgeInsets.only(top: 10),
+                  ),
+                  GridView.count(
+                      physics:
+                          NeverScrollableScrollPhysics(), // to enable scrolling
+                      shrinkWrap: true,
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 20,
+                      mainAxisSpacing: 20,
+                      children: List.generate(lst.length, (index) {
+                        return Container(
+                          color: Colors.amber,
+                          child: Center(
+                            child: Text("${lst[index]}"),
+                          ),
+                        );
+                      }))
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/158050697-3f0acb25-ae70-4de4-86f4-ba0cae466caa.png)
+
+![image](https://user-images.githubusercontent.com/59369881/158050704-9f027558-bd40-4c11-93ad-accce4944132.png)
 
 
 
