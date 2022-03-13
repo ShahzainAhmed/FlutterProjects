@@ -41,6 +41,7 @@
 - TabBar
 - setState
 - Counter Application (using setState)
+- Calculator Application
 
 ## Child vs Children
 **Child means one widget, children means more than one widget.**
@@ -1630,4 +1631,130 @@ Output:
 
 **If from one side it's scrolling, but from other side it is not, then we will use ``physics:NeverScrollableScrollPhysics() // to enable scrolling `` 
 
+## Calculator Application
 
+### main.dart
+
+```
+import 'package:flutter/material.dart';
+import 'home.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+// Stateless Class
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Calculator(),
+      ),
+    );
+  }
+}
+```
+
+### home.dart
+```
+import 'package:flutter/material.dart';
+import 'package:math_expressions/math_expressions.dart';
+
+class Calculator extends StatefulWidget {
+  @override
+  State<Calculator> createState() => CalculatorState();
+}
+
+class CalculatorState extends State<Calculator> {
+  var result = "";
+
+  Widget button(var textt) {
+    // parameter button/widget
+    return ElevatedButton(
+        onPressed: () {
+          setState(() {
+            result += textt;
+          });
+        },
+        child: Text(textt));
+  }
+
+  clearr() {
+    setState(() {
+      result = "";
+    });
+  }
+
+  output() {
+    Parser p =
+        Parser(); // to change anything from one to another, like from String to int, parser is used.
+    Expression exp = p.parse(result);
+    ContextModel cm = ContextModel();
+    double eval = exp.evaluate(EvaluationType.REAL, cm);
+    setState(() {
+      result = eval.toString();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              result,
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                button("1"),
+                button("2"),
+                button("3"),
+                button("4"),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                button("5"),
+                button("6"),
+                button("7"),
+                button("8"),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                button("9"),
+                button("0"),
+                button("+"),
+                button("-"),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                button("*"),
+                button("/"),
+                ElevatedButton(onPressed: clearr, child: Text("Clear")),
+                ElevatedButton(onPressed: output, child: Text("=")),
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/158055820-db1f20da-b881-46d6-9705-3d84af6b5470.png)  
+
+![image](https://user-images.githubusercontent.com/59369881/158055833-7552a210-2cc3-415f-a191-40fdb4413bca.png)
