@@ -1523,7 +1523,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<dynamic> lst = [1, 2, 3, 4, 5, 6, 7, 8];
+  List<dynamic> lst = [1, 2, 3, 4, 5, 6, 7, 8];     // List<dynamic> means you can take String, as well as integers in list, e.g. [1,'2',3,"4"]
 
   @override
   Widget build(BuildContext context) {
@@ -1627,5 +1627,7 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/158050704-9f027558-bd40-4c11-93ad-accce4944132.png)
 
+
+**If from one side it's scrolling, but from other side it is not, then we will use ``physics:NeverScrollableScrollPhysics() // to enable scrolling `` 
 
 
