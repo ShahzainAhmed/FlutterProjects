@@ -1277,7 +1277,7 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/158027168-8c8002fb-055d-40f0-ac5c-66f05609a569.png)
 
-## TabBar
+## TabBar()
 **It comes in AppBar, and takes tabs:[]**
 
 ### home.dart
@@ -1386,4 +1386,68 @@ Output:
 ![image](https://user-images.githubusercontent.com/59369881/158041507-9f1013ab-719d-4fdf-adc7-e2924d09809b.png)  
 
 ![image](https://user-images.githubusercontent.com/59369881/158041515-2d73aaec-b30e-4662-8d2f-da30b937d198.png)
+
+## setState()
+
+**Everthing which includes logic, e.g. Calculator, will be done using setState().**
+
+### home.dart
+
+```
+import 'package:flutter/material.dart';
+
+// Stateful Class
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  var text = " ";
+
+  one() {
+    setState(() {
+      text = "1";
+    });
+  }
+
+  two() {
+    setState(() {
+      text = "2";
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Text: $text" , style: TextStyle(fontWeight: FontWeight.bold),),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(onPressed: one, child: Text("Make 1")),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(onPressed: two, child: Text("Make 2")),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/158042072-cc230c42-4455-4664-ba3f-a8cdc042ba21.png)  
+
+![image](https://user-images.githubusercontent.com/59369881/158042085-8f6d0c94-f2a4-46c1-9d36-18ad4856895a.png)  
+
+
+
+
 
