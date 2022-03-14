@@ -43,7 +43,8 @@
 - Counter Application (using setState)
 - Calculator Application
 - Todo Application
-- API
+- http and https
+- authority and unencodedPath
 
 ## Child vs Children
 **Child means one widget, children means more than one widget.**
@@ -1909,5 +1910,15 @@ Output:
 ## http and https
 **When it's http, simply write URL, but if it's https, then write (Uri.https(authority, unencodedPath));**
 
+## authority and unencodedPath
+### authority
+**In a website URL, the address till .com/, that is called as authority.**
+
+### unencodedPath
+**In a website URL, the text which comes after the .com/(backslash) is called unencodedPath**
+
+**Example:**  
+By default: **`http.get(Uri.https(authority, unencodedPath))`**  
+After adding the authority and unencodedPath **`http.get(Uri.https("jsonplaceholder.typicode.com/", "users"));`**
 
 
