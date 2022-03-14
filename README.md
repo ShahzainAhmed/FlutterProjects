@@ -43,6 +43,7 @@
 - Counter Application (using setState)
 - Calculator Application
 - Todo Application
+- API
 
 ## Child vs Children
 **Child means one widget, children means more than one widget.**
@@ -1905,8 +1906,8 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/158092114-2d47a401-c5ff-446c-bcc6-7cdb6ff4f9e2.png)
 
-
-
+## http and https
+**When it's http, simply write URL, but if it's https, then write (Uri.https(authority, unencodedPath));**
 
 
 
