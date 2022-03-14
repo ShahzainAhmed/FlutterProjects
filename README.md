@@ -1909,11 +1909,11 @@ Output:
 ![image](https://user-images.githubusercontent.com/59369881/158092114-2d47a401-c5ff-446c-bcc6-7cdb6ff4f9e2.png)
 
 ## http and https
-**When it's http, simply write URL, but if it's https, then write (Uri.https(authority, unencodedPath));**
+**When it's http, write `(Uri.http(authority, unencodedPath));`, but if it's https, then write `(Uri.https(authority, unencodedPath));`**
 
 ## authority and unencodedPath
 ### authority
-**In a website URL, the address before/till .com, that is called as authority.**
+**In a website URL, the address before ( / backslash) like `shahzainahmed.com/users`, in this the authority is `shahzainahmed.com` that is called as authority.**
 
 ### unencodedPath
 **In a website URL, the text which comes after the .com/(backslash) is called unencodedPath**
