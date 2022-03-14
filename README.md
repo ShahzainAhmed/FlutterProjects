@@ -42,6 +42,7 @@
 - setState
 - Counter Application (using setState)
 - Calculator Application
+- Todo Application
 
 ## Child vs Children
 **Child means one widget, children means more than one widget.**
@@ -1758,3 +1759,154 @@ Output:
 ![image](https://user-images.githubusercontent.com/59369881/158055820-db1f20da-b881-46d6-9705-3d84af6b5470.png)  
 
 ![image](https://user-images.githubusercontent.com/59369881/158055833-7552a210-2cc3-415f-a191-40fdb4413bca.png)
+
+## GestureDetector()
+
+**to make anything like text/icons clickable, use GestureDetector**
+
+## Todo Application
+
+### main.dart
+
+```
+import 'package:flutter/material.dart';
+import 'home.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Todo(),
+      ),
+    );
+  }
+}
+```
+
+### todo.dart
+
+```
+import 'package:flutter/material.dart';
+
+class Todo extends StatefulWidget {
+  @override
+  State<Todo> createState() => _TodoState();
+}
+
+class _TodoState extends State<Todo> {
+  var output = " ";
+  List<dynamic> lst = [1, 2, 3];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ListView.builder(
+        itemCount: lst.length,
+        itemBuilder: (context, index) {
+          return Container(
+            height: 50,
+            color: Colors.amber[300],
+            margin: EdgeInsets.only(top: 15),
+            child: ListTile(
+              title: Text("${lst[index]}"),
+              trailing: Container(
+                width: 50,
+                child: Row(
+                  children: [
+                    GestureDetector(
+                      // to make anything like text/icons clickable, use GestureDetector
+                      child: Icon(Icons.edit),
+                      onTap: () {
+                        showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                title: Text("Edit Item"),
+                                content: TextField(
+                                  onChanged: (value) {
+                                    output = value;
+                                  },
+                                ),
+                                actions: [
+                                  ElevatedButton(
+                                      onPressed: () {
+                                        setState(() {
+                                          lst.replaceRange(index, index + 1, {
+                                            output
+                                          }); // using curly braces {output} to use dynamic
+                                        });
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: Text("Edit"))
+                                ],
+                              );
+                            });
+                      },
+                    ),
+                    GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            lst.removeAt(index);
+                          });
+                        },
+                        child: Icon(Icons.delete)),
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  title: Text("Add Item"),
+                  content: TextField(
+                    onChanged: (value) {
+                      output = value;
+                    },
+                  ),
+                  actions: [
+                    ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            lst.add(output);
+                          });
+                          Navigator.of(context).pop();
+                        },
+                        child: Text("Add"))
+                  ],
+                );
+              });
+        },
+        child: Text("Add"),
+      ),
+    );
+  }
+}
+```
+
+Output:   
+
+![image](https://user-images.githubusercontent.com/59369881/158091993-07088750-6023-47b4-bbeb-47ef0a8fcbb0.png)  
+
+![image](https://user-images.githubusercontent.com/59369881/158092041-6b0f0ea0-4397-42f3-b528-ee4248893ae4.png)
+
+![image](https://user-images.githubusercontent.com/59369881/158092078-95c883f6-9825-4850-b544-be50c7dd1d9c.png)
+
+![image](https://user-images.githubusercontent.com/59369881/158092114-2d47a401-c5ff-446c-bcc6-7cdb6ff4f9e2.png)
+
+
+
+
+
+
