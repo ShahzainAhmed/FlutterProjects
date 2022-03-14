@@ -46,6 +46,8 @@
 - http and https
 - authority and unencodedPath
 - async and await
+- FutureBuilder
+- API Integration
 
 ## Child vs Children
 **Child means one widget, children means more than one widget.**
@@ -1916,7 +1918,7 @@ Output:
 **In a website URL, the address before ( / backslash) like `shahzainahmed.com/users`, in this the authority is `shahzainahmed.com` that is called as authority.**
 
 ### unencodedPath
-**In a website URL, the text which comes after the .com/(backslash) is called unencodedPath**
+**In a website URL, the text which comes after the .com/(backslash) like `shahzainahmed.com/users`, in this `users` is called unencodedPath. **
 
 **Example:**  
 By default: **`http.get(Uri.https(authority, unencodedPath))`**  
@@ -1936,3 +1938,102 @@ getUser() async {
 
 }
 ```
+
+## FutureBuilder()
+**FutureBuilder is a widget that uses the result of a Future to build itself. For any data which is coming from API / internet, we use FutureBuilder()**
+
+## API Integration
+
+### main.dart
+
+```
+import 'package:flutter/material.dart';
+import 'api.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "Flutter Demo",
+      home: Scaffold(
+        body: Api(),
+      ),
+    );
+  }
+}
+```
+
+### api.dart
+
+```
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http; // as = alias
+
+class Api extends StatefulWidget {
+  @override
+  State<Api> createState() => _ApiState();
+}
+
+class _ApiState extends State<Api> {
+// making a function to get the data
+  getUser() async {
+    var users = [];
+    var response =
+        await http.get(Uri.https("jsonplaceholder.typicode.com", "users"));
+    var jsonData = jsonDecode(response.body);
+
+    // using for loop to receive data based on indexes
+    for (var i in jsonData) {
+      UserModel user = UserModel(i['name'], i['username'], i['company']['name']); 
+      // we have written i[company][name] because we want companie's name to be in subtitle
+      users.add(user);
+    }
+
+    return users;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: FutureBuilder(
+      future: getUser(),
+      builder: (context, AsyncSnapshot snapshot) {
+        if (snapshot.data == null) {
+          return Container(
+            child: Text("Nothing in API"),
+          );
+        } else
+          return ListView.builder(
+              itemCount: snapshot.data.length,
+              itemBuilder: (context, i) {
+                return ListTile(
+                  title: Text(snapshot.data[i].name),
+                  subtitle: Text(snapshot.data[i].company),
+                );
+              });
+      },
+    )); // we use 'snapshot' just like we use 'i' in forloop
+  }
+}
+
+class UserModel {
+  var name;
+  var username;
+  var company;
+
+  UserModel(this.name, this.username, this.company);
+}
+```
+
+**Dataset copied from https://jsonplaceholder.typicode.com/users**
+
+Output:  
+
+![image](https://user-images.githubusercontent.com/59369881/158139097-66bb05c1-02c4-4fcc-a8d6-af50bb093c16.png)
+
