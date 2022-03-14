@@ -45,6 +45,7 @@
 - Todo Application
 - http and https
 - authority and unencodedPath
+- async and await
 
 ## Child vs Children
 **Child means one widget, children means more than one widget.**
@@ -1912,13 +1913,26 @@ Output:
 
 ## authority and unencodedPath
 ### authority
-**In a website URL, the address till .com/, that is called as authority.**
+**In a website URL, the address before/till .com, that is called as authority.**
 
 ### unencodedPath
 **In a website URL, the text which comes after the .com/(backslash) is called unencodedPath**
 
 **Example:**  
 By default: **`http.get(Uri.https(authority, unencodedPath))`**  
-After adding the authority and unencodedPath **`http.get(Uri.https("jsonplaceholder.typicode.com/", "users"));`**
+After adding the authority and unencodedPath **`http.get(Uri.https("jsonplaceholder.typicode.com", "users"));`**
 
+## async and await
+### async
+**This is a function which stops the entire function till we receive the entire data from the website.**
 
+### await
+**And when we use async, to get the data from the link, then we use await, either our data has been completely received or rejected, for that to see, we use await.**  
+
+**Example:**
+```
+getUser() async {
+  var response = await http.get(Uri.https("jsonplaceholder.typicode.com/", "users"));
+
+}
+```
