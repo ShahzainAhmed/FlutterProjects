@@ -49,6 +49,7 @@
 - FutureBuilder
 - API Integration
 - Firebase
+- sync and async
 
 ## Child vs Children
 **Child means one widget, children means more than one widget.**
@@ -2102,3 +2103,11 @@ class Register extends StatelessWidget {
   }
 }
 ```
+
+## sync and async
+
+### sync
+**it means it will stop the execution till the sync process finishes, then it will move to the next line.**
+
+### async 
+**this will not stop the process, but it will be running its own async process in backgroud, while you can move to the next line simulataneously. Just like Facebook video uploading, while the video is uploading, you can still use facebook.**
