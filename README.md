@@ -48,6 +48,7 @@
 - async and await
 - FutureBuilder
 - API Integration
+- Firebase
 
 ## Child vs Children
 **Child means one widget, children means more than one widget.**
@@ -2037,3 +2038,67 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/59369881/158139097-66bb05c1-02c4-4fcc-a8d6-af50bb093c16.png)
 
+## Firebase
+
+### main.dart
+```
+import 'package:flutter/material.dart';
+import 'login.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "Flutter Demo",
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Register(),
+      
+    );
+  }
+}
+```
+
+### login.dart
+```
+import 'package:flutter/material.dart';
+
+class Register extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: SafeArea(
+            child: Column(
+          children: [
+            TextFormField(
+              decoration: const InputDecoration(
+                labelText: 'Enter your username',
+              ),
+            ),
+            TextFormField(
+              decoration: const InputDecoration(
+                labelText: 'Enter your email',
+              ),
+            ),
+            TextFormField(
+              decoration: const InputDecoration(
+                labelText: 'Enter your password',
+              ),
+            ),
+            Padding(padding: EdgeInsets.symmetric(vertical: 10)),
+            ElevatedButton(onPressed: () {}, child: Text("Register"))
+          ],
+        )),
+      ),
+    );
+  }
+}
+```
