@@ -48,7 +48,7 @@
 - async and await
 - FutureBuilder
 - API Integration
-- Firebase
+- Firebase (backend - incomplete)
 - sync and async
 
 ## Child vs Children
